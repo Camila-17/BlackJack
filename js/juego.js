@@ -32,34 +32,71 @@ function combinarCartas() {
 }
 
 function iniciarJuego() {
-    for (let i = 0; i < 1; i++) {
-        let imagenCarta = document.createElement("img");
-        let carta = baraja.pop();
-        imagenCarta.src = "./cartas/" + carta + ".png";
-        //imagenCarta.classList.add('imagenCarta');
-        puntosJugadorUno += getValue(carta);
-        document.getElementById("cartaJugador1").append(imagenCarta);
-    }
-    //console.log(puntosJugadorUno);
 
-    document.getElementById("btnUno").addEventListener("click", nuevaCarta);
+
+    document.getElementById("btnUno").addEventListener("click", nuevaCartaUno);
+    document.getElementById("btnDos").addEventListener("click", nuevaCartaDos);
+    document.getElementById("btnDetener").addEventListener("click", detener);
 }
 //console.log(puntosJugadorUno);
 
-function nuevaCarta() {
+function nuevaCartaUno() {
     if (!validarInicio) {
         return
     }
-    let imagenCarta = document.createElement("img");
+    let imagenCartaUno = document.createElement("img");
     let carta = baraja.pop();
-    imagenCarta.src = "./cartas/" + carta + ".png";
+    imagenCartaUno.src = "./cartas/" + carta + ".png";
     //imagenCarta.classList.add('imagenCarta');
     puntosJugadorUno += getValue(carta);
-    document.getElementById("cartaJugador1").append(imagenCarta);
+    document.getElementById("cartaJugador1").append(imagenCartaUno);
     console.log(puntosJugadorUno);
+
+    if (puntosJugadorUno > 21 || puntosJugadorDos > 21) {
+        validarInicio = false;
+    }
+
 }
-//console.log(puntosJugadorUno);
-//se asigna valor a las cartas
+
+function nuevaCartaDos() {
+    if (!validarInicio) {
+        return
+    }
+    let imagenCartaDos = document.createElement("img");
+    let carta = baraja.pop();
+    imagenCartaDos.src = "./cartas/" + carta + ".png";
+    puntosJugadorDos += getValue(carta);
+    document.getElementById("cartaJugador2").append(imagenCartaDos);
+    console.log(puntosJugadorDos);
+
+    if (puntosJugadorUno > 21 || puntosJugadorDos > 21) {
+        validarInicio = false;
+    }
+}
+
+function detener() {
+
+
+    validarInicio = false;
+
+    let mensaje = "";
+    if (puntosJugadorUno > 21) {
+        mensaje = "!congratulations¡ Jugador-2 Ganador!";
+    } else if (puntosJugadorDos > 21) {
+        mensaje = "!congratulations¡ Jugador-1 Ganador!"
+    } else if (puntosJugadorUno == puntosJugadorDos) {
+        mensaje = "Se declara empate";
+    } else if (puntosJugadorUno > puntosJugadorDos) {
+        mensaje = "!congratulations¡ Jugador-1 Ganador";
+    } else if (puntosJugadorUno < puntosJugadorDos) {
+        mensaje = "!congratulations¡ Jugador-2 Ganador";
+    }
+    document.getElementById("resultados").textContent = mensaje;
+    document.getElementById("ptsJugador1").textContent = puntosJugadorUno;
+    document.getElementById("ptsJugador2").textContent = puntosJugadorDos;
+
+}
+
 function getValue(carta) {
     let datoCarta = carta;
     let value = datoCarta[0];
@@ -68,7 +105,8 @@ function getValue(carta) {
     } else {
         if (isNaN(value)) {
             if (value == "A") {//A J Q K validando el valor de A
-                return 11;
+                let valorA = prompt('Has sacado la Carta "A", selecciona "11","10" o "1"')
+                return parseInt(valorA);
             }
             return 10;
         }
