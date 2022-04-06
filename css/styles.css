@@ -34,3 +34,19 @@
     width: 125px;
     margin: 1;
 }
+
+#btnDetener {
+    display: none;
+}
+
+#btnUno {
+    display: none;
+}
+
+#btnDos {
+    display: none;
+}
+
+#btnNuevo {
+    display: none;
+}
