@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+
+.fondo {
+    background-color: #1b5e20;
+    font-family: 'Sigmar One', cursive;
+    font-size: 35px;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.btnRed {
+    background-color: red ;
+}
+
+.j1 {
+    color: aliceblue;
+}
+
+.j2 {
+    color: aliceblue;
+    
+}
+
+.imagenCarta {
+    width: 150px;
+}
