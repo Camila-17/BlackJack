@@ -19,12 +19,14 @@
 
     <div class="container">
         <div class="row">
-            <button>Nuevo Juego</button>
-            <button id="btnUno">Nueva carta</button>
-            
+            <button id="btnNuevo">Nuevo Juego</button>
+            <button id="btnUno">Nueva carta Jugador-1</button>
+            <button id="btnDos">Nueva carta Jugador-2</button>
+            <p id="resultados">"resultado ganador"</p>
+
         </div>
     </div>
-      
+
     <!-- <div class="container">
         <div class="row ">
             <h1 class="j1">Jugador 1 - <small>0</small></h1>
@@ -32,12 +34,18 @@
         </div>
     </div> -->
 
+    <!--nota:estos mensajes se pueden borrar"-->
+    <!--1. en "small van los puntos de cada jugador"-->
+    <!--2. en "p" se mostrara el resultado de quien gana-->
+    <!--3. los div con id cartasJugador1 y cartasJugador2, son las cartas-->
+
+
     <div class="contenedor">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="j1">Jugador 1 - <small>0</small></h1>
-                    <div id="cartaJugador"></div>
+                    <h1 class="j1">Jugador 1 - <small id="ptsJugador1">0</small></h1>
+                    <div id="cartaJugador1" class="divCartas"></div>
                 </div>
             </div>
         </div>
@@ -49,16 +57,17 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="j2">Jugador 2 - <small>0</small></h1>
+                    <h1 class="j2">Jugador 2 - <small id="ptsJugador2">0</small></h1>
+                    <div id="cartaJugador2"></div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 
     <script src="./js/juego.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

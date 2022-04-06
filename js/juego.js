@@ -1,7 +1,5 @@
 var puntosJugadorUno = 0;
 var puntosJugadorDos = 0;
-var cuentaJugadorUno = 0;
-var cuentaJugadorDos = 0;
 var baraja;
 var validarInicio = true;//comprobar si los puntos son <=21
 
@@ -21,7 +19,6 @@ function hacerBaraja() {
             baraja.push(valorCarta[j] + tipoCarta[i])
         }
     }
-    console.log(baraja);
 }
 //se combinan las cartas con random
 function combinarCartas() {
@@ -35,19 +32,19 @@ function combinarCartas() {
 }
 
 function iniciarJuego() {
-    for (let i = 0; i < 0; i++) {
+    for (let i = 0; i < 1; i++) {
         let imagenCarta = document.createElement("img");
         let carta = baraja.pop();
         imagenCarta.src = "./cartas/" + carta + ".png";
-        imagenCarta.classList.add('imagenCarta');
+        //imagenCarta.classList.add('imagenCarta');
         puntosJugadorUno += getValue(carta);
-        cuentaJugadorUno += checkValorA(carta);
-        document.getElementById("cartaJugador").append(imagenCarta);
+        document.getElementById("cartaJugador1").append(imagenCarta);
     }
-    console.log(puntosJugadorUno);
+    //console.log(puntosJugadorUno);
 
     document.getElementById("btnUno").addEventListener("click", nuevaCarta);
 }
+//console.log(puntosJugadorUno);
 
 function nuevaCarta() {
     if (!validarInicio) {
@@ -56,29 +53,26 @@ function nuevaCarta() {
     let imagenCarta = document.createElement("img");
     let carta = baraja.pop();
     imagenCarta.src = "./cartas/" + carta + ".png";
-    imagenCarta.classList.add('imagenCarta');
+    //imagenCarta.classList.add('imagenCarta');
     puntosJugadorUno += getValue(carta);
-    cuentaJugadorUno += checkValorA(carta);
-    document.getElementById("cartaJugador").append(imagenCarta);
+    document.getElementById("cartaJugador1").append(imagenCarta);
+    console.log(puntosJugadorUno);
 }
+//console.log(puntosJugadorUno);
 //se asigna valor a las cartas
 function getValue(carta) {
     let datoCarta = carta;
-    console.log(datoCarta);
     let value = datoCarta[0];
-    if (isNaN(value)) {
-        if (value == "A") {//A J Q K validando el valor de A
-            return 11;
+    if (value == 1) {
+        return parseInt(10);
+    } else {
+        if (isNaN(value)) {
+            if (value == "A") {//A J Q K validando el valor de A
+                return 11;
+            }
+            return 10;
         }
-        return 10;
+        return parseInt(value);
     }
-    return parseInt(value);
 }
 
-//Se chequea si el valor de la carta "A" es "1".
-function checkValorA(carta) {
-    if (carta[0] == "A") {
-        return 1;
-    }
-    return 0;
-}
