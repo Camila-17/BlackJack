@@ -134,9 +134,9 @@ function getValue(carta) {
                     return parseInt(valorA);
                 } else {
                     alert("Por favor ingresa un valor valido para la carta A  ")
-                    return false;
+                    let valorA = prompt('Has sacado la Carta "A", selecciona "11","10" o "1"')
+                    return parseInt(valorA)
                 }
-
             }
             return 10;
         }
