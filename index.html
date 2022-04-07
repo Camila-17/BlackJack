@@ -14,16 +14,14 @@
 <body class="fondo">
 
     <header>
-        <h1 class=" h1 text-center">BLACKJACK</h1>
+        <h1 class="titulo">¡PIERDE TU DINERO!</h1>
     </header>
 
     <div class="container">
         <div class="row">
             <button id="btnNuevo">Nuevo Juego</button>
-            <button id="btnUno">Nueva carta Jugador-1</button>
-            <button id="btnDos">Nueva carta Jugador-2</button>
-            <p id="resultados"></p>
-
+            <button id="btnUno">Jugador 1 toma carta</button>
+            <button id="btnDos">Jugador 2 toma carta</button>
         </div>
     </div>
 
@@ -56,13 +54,16 @@
                 <div>
                     <button id="btnDetener" class="btnRed">Detener Juego</button>
                 </div>
+                <div>
+                    <p class="resultado" id="resultados"></p>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="j2">Jugador 2 - <small id="ptsJugador2"></small></h1>
+                    <h1 class="j2">Jugador 2 - <small id="ptsJugador2">0</small></h1>
                     <div id="cartaJugador2"></div>
                     <img src="./cartas/red_back.png" alt="">
                 </div>

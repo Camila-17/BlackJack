@@ -1,9 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
 .fondo {
-    background-color: #1b5e20;
-    font-family: 'Sigmar One', cursive;
+    background-image: url("../img/casino3.webp");
+    background-size: cover;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 35px;
+}
+
+.titulo{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 0.2em rgb(234, 231, 255),
+    0 0 0.2em rgb(217, 211, 255),
+    0 0 0.2em rgb(217, 213, 245) ;
+    
 }
 
 .contenedor {
@@ -12,17 +24,25 @@
     text-align: center;
 }
 
+.contenedorj {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 .btnRed {
-    background-color: red;
+    background-color: rgb(204, 7, 7);
 }
 
 .j1 {
     color: aliceblue;
+    text-shadow: 0.1em 0.1em #333;
 }
 
 .j2 {
     color: aliceblue;
-
+    text-shadow: 0.1em 0.1em #333;
 }
 
 .imagenCarta {
@@ -35,18 +55,58 @@
     margin: 1;
 }
 
+.contenedor{
+    position: relative;
+}
+
 #btnDetener {
+    
     display: none;
+    font-size: 30px;
+    position: absolute;
+    left: 595px;
+    bottom: 50px;
+    
 }
 
 #btnUno {
     display: none;
+    bottom: 80px;
+    position: absolute;
+    left: 230px;
+    font-size: 30px;
+    border-radius: 12px;
+    margin-top: 100px;
+    
 }
 
 #btnDos {
     display: none;
+    bottom: 80px;
+    position: absolute;
+    right: 210px;
+    font-size: 30px;
+    border-radius: 12px;
+    
 }
 
 #btnNuevo {
     display: none;
+    font-size: 35px;
+    position: absolute;
+    left: 595px;
+    bottom: 350px;
+    z-index: 10;
+    border-radius: 12px;
 }
+
+.resultado{
+    text-align: center;
+    position: absolute;
+    color: aliceblue;
+    margin-top: 420px;
+    right: 490px;
+    font-size: 50px;
+    text-shadow: 0.1em 0.1em rgb(77, 87, 84);
+}
+

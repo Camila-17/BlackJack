@@ -105,15 +105,15 @@ function detener() {
 
     let mensaje = "";
     if (puntosJugadorUno > 21) {
-        mensaje = "!congratulations¡ Jugador-2 Ganador!";
+        mensaje = "Jugador-2 Ganador!";
     } else if (puntosJugadorDos > 21) {
-        mensaje = "!congratulations¡ Jugador-1 Ganador!"
+        mensaje = "Jugador-1 Ganador!"
     } else if (puntosJugadorUno == puntosJugadorDos) {
         mensaje = "Se declara empate";
     } else if (puntosJugadorUno > puntosJugadorDos) {
-        mensaje = "!congratulations¡ Jugador-1 Ganador";
+        mensaje = "Jugador-1 Ganador";
     } else if (puntosJugadorUno < puntosJugadorDos) {
-        mensaje = "!congratulations¡ Jugador-2 Ganador";
+        mensaje = "Jugador-2 Ganador";
     }
     document.getElementById("resultados").textContent = mensaje;
     document.getElementById("ptsJugador1").textContent = puntosJugadorUno;
